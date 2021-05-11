@@ -7,6 +7,12 @@
         >Start</b-button
       >
       <b-button type="is-warning" v-else @click="pause">Pause</b-button>
+      <b-button
+        type="is-info"
+        v-if="started && countDown > 8 * 60 + 5"
+        @click="forceConsulationPeriod"
+        >Force consultation period</b-button
+      >
       <b-button type="is-danger" @click="reset">Reset</b-button>
     </div>
   </div>
@@ -68,6 +74,10 @@ export default Vue.extend({
     },
     start() {
       this.started = true;
+    },
+    forceConsulationPeriod(){
+        this.countDown = 8 * 60 + 5;
+        this.started = true;
     },
     pause() {
       this.started = false;
