@@ -1,20 +1,24 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <Timer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Timer from "./components/Timer.vue";
+import Buefy from "buefy";
+import "buefy/dist/buefy.css";
 
 export default Vue.extend({
   name: "App",
   components: {
-    HelloWorld,
+    Timer,
   },
 });
+
+Vue.use(Buefy);
 </script>
 
 <style lang="scss">
